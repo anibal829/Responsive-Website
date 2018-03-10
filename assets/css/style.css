@@ -30,6 +30,14 @@ header {
 footer {
     font-size: 0.85em;
 }
+.group::before,
+.group::after {
+    content: "";
+    display: table;
+}
+.group::after {
+    clear: both;
+}
 
 /* Theme */
 
@@ -47,9 +55,49 @@ footer {
 }
 
 .content {
+    position: relative;
     padding: 20px;
 }
 
 .logo {
     font-size: 2.5em;
 }
+
+/* Sandbox: Pseudo-Elements */
+
+.stuff {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    margin-bottom: 10px;
+}
+
+.notification {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    border: 2px solid rgba(0,0,0,0.15);
+    border-top: 2px solid rgba(255,255,255,0.5);
+    border-left: 2px solid rgba(255,255,255,0.5);
+    background-color: green;
+    box-shadow: 0 3px 1px red;
+}
+
+.stuff:nth-child(3) {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: 0;
+}
+
+.stuff:nth-child(even) {
+    background-color: #999;
+}
+
+/* Sandbox: Positioning */
+
