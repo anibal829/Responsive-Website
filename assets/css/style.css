@@ -40,7 +40,10 @@ footer {
 
 /* Theme */
 
-#mainContainer {}
+#mainContainer {
+    column-count: 4;
+    column-width: 500px;
+}
 
 .wrapper {
     width: 100%;
